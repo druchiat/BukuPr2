@@ -24,7 +24,7 @@
         android:id="@+id/tvEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/varela"
         android:text="Edit"
         android:textColor="#777777"
@@ -37,20 +37,20 @@
         android:id="@+id/btnSearch"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/ic_search"
         app:layout_constraintBottom_toBottomOf="@+id/tvEdit"
-        app:layout_constraintEnd_toStartOf="@id/btnLogout"
-        app:layout_constraintTop_toTopOf="@+id/tvEdit" />
+        app:layout_constraintEnd_toStartOf="@id/btnLogout" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnLogout"
-        android:background="@drawable/ic_logout"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginEnd="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnSearch"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnSearch" />
+        android:background="@drawable/ic_logout"
+        app:layout_constraintBottom_toBottomOf="@+id/tvEdit"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

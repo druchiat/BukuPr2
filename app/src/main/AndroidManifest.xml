@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BukuPr2">
         <activity
+            android:name=".CreateBukuPrActivity"
+            android:exported="false" />
+        <activity
             android:name=".BukuPrActivity"
             android:exported="false" />
         <activity
