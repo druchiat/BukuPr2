@@ -3,10 +3,12 @@ package com.example.bukupr2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
+import com.example.bukupr2.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.SignInButton
@@ -24,19 +26,24 @@ class LoginActivity : AppCompatActivity() {
         private const val RC_GOOGLE_SIGN_IN = 4926
     }
 
+    private lateinit var binding: ActivityLoginBinding
     private lateinit var btnSignIn: SignInButton
     private lateinit var auth: FirebaseAuth
+    lateinit var authg: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //Remove Action and Title Bar
         this.requestWindowFeature(Window.FEATURE_NO_TITLE)
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         btnSignIn = findViewById(R.id.btnSignIn)
         auth = Firebase.auth
+        authg = FirebaseAuth.getInstance()
 
         // Configure Google Sign In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -48,6 +55,30 @@ class LoginActivity : AppCompatActivity() {
         btnSignIn.setOnClickListener() {
             val signInIntent = googleSignInClient.signInIntent
             startActivityForResult(signInIntent, RC_GOOGLE_SIGN_IN)
+        }
+    }
+
+    private fun login() {
+        var email = binding.etEmail
+        var password = binding.etPassword
+
+        binding.btnLogin.setOnClickListener {
+            if (TextUtils.isEmpty(email.text.toString())) {
+                email.setError("Please enter your email!")
+                return@setOnClickListener
+            } else if (TextUtils.isEmpty(password.text.toString())) {
+                password.setError("Please enter your password!")
+                return@setOnClickListener
+            }
+            authg.signInWithEmailAndPassword(email.text.toString(), password.text.toString())
+                .addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        startActivity(Intent(this, MainActivity::class.java))
+                        finish()
+                    } else {
+                        Toast.makeText(this, "Sign In Failed Please Try Again", Toast.LENGTH_LONG).show()
+                    }
+                }
         }
     }
 
