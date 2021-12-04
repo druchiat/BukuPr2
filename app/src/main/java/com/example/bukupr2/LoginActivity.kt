@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
+import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
@@ -44,6 +45,13 @@ class LoginActivity : AppCompatActivity() {
         btnSignIn = findViewById(R.id.btnSignIn)
         auth = Firebase.auth
         authg = FirebaseAuth.getInstance()
+
+        //Login to Register
+        binding.tvToRegister.setOnClickListener {
+            val registerIntent = Intent(this, RegisterActivity::class.java)
+            startActivity(registerIntent)
+            finish()
+        }
 
         // Configure Google Sign In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

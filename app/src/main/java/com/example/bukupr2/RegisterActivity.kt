@@ -5,6 +5,8 @@ import com.example.bukupr2.databinding.ActivityRegisterBinding
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.text.TextUtils
+import android.view.Window
+import android.view.WindowManager
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -19,12 +21,17 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //Remove Action and Title Bar
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
-        databaseReference = database?.reference!!.child("Profile")
+        databaseReference = database?.reference!!.child("User")
 
         register()
 
