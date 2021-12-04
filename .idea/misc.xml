@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudio_SDK/BukuPr2/app/src/main/res/drawable/sign_in_layout.xml" value="0.2755208333333333" />
+        <entry key="..\:/AndroidStudio_SDK/BukuPr2/app/src/main/res/drawable/style_rounded_blue_rectangle.xml" value="0.2755208333333333" />
+        <entry key="..\:/AndroidStudio_SDK/BukuPr2/app/src/main/res/font/font.xml" value="0.28958333333333336" />
+        <entry key="..\:/AndroidStudio_SDK/BukuPr2/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/AndroidStudio_SDK/BukuPr2/app/src/main/res/layout/activity_main.xml" value="0.2453125" />
+        <entry key="..\:/AndroidStudio_SDK/BukuPr2/app/src/main/res/layout/activity_register.xml" value="0.4" />
+        <entry key="..\:/AndroidStudio_SDK/BukuPr2/app/src/main/res/menu/menu_main.xml" value="0.259375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

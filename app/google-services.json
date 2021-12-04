@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "670205104934",
+    "project_id": "bukupr2-1aac4",
+    "storage_bucket": "bukupr2-1aac4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670205104934:android:371d133e5e975192a3e7e7",
+        "android_client_info": {
+          "package_name": "com.example.bukupr2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670205104934-759o85ndqvvsu87uj3qruhem5lp2k8u4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bukupr2",
+            "certificate_hash": "8235a1ff7f34cac0674aa56ce91faf43a5e2279f"
+          }
+        },
+        {
+          "client_id": "670205104934-7vn47nteco3j07e9h82apabg63c9gs2u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUGnSwtXfl4X8grlF-EsuXZvAY2bz2ktA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670205104934-7vn47nteco3j07e9h82apabg63c9gs2u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
