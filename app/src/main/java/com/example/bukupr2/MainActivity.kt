@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -26,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
@@ -41,5 +45,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(logoutIntent)
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    fun Logout(view: android.view.View) {
+        auth.signOut()
+        val logoutIntent = Intent(this, LoginActivity::class.java)
+        logoutIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(logoutIntent)
     }
 }
